@@ -22,11 +22,9 @@ target_include_directories(simplefem PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
 
 set(HEADERS_simplefem
   ${CMAKE_CURRENT_SOURCE_DIR}/simplefem/lagrange.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/simplefem/polynomials.h
 )
 target_sources(simplefem PRIVATE
-  ${CMAKE_CURRENT_SOURCE_DIR}/simplefem/lagrange.cpp 
-  ${CMAKE_CURRENT_SOURCE_DIR}/simplefem/polynomials.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/simplefem/lagrange.cpp
 )
 # Configure the library
 set_target_properties(simplefem PROPERTIES PUBLIC_HEADER simplefem/lagrange.h)

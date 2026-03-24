@@ -18,7 +18,6 @@ public:
 
 private:
     int _degree;
-    std::vector<std::vector<double>> _coeffs;
 };
 
 } // namespace simplefem
