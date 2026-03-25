@@ -1,0 +1,53 @@
+# simplefem++: a simple example C++ finite element library.
+
+[![DefElement verification](https://defelement.org/badges/simplefempp.svg)](https://defelement.org/verification/simplefempp.html)
+
+simplefem++ is a very simple finite element definition library, that is used as an example
+in the DefElement documentation.
+
+## Using simplefem++
+
+simplefem++ can be used to evaluate basis functions of Lagrange elements on triangles. To
+create a Lagrange element on a triangle, the class `LagrangeElementTriangle` can
+be initialised. For example, the following snippet creates a degree 3 Lagrange element on a
+triangle:
+
+```cpp
+auto e = LagrangeElementTriangle(3);
+```
+
+A basis function of a simplefem++ element can be evaluated at a point using the `evaluate`
+method. For example, the following snippet gets the value of the basis function with index 2 of a
+Lagrange element with 10 basis functions at the point (0.3, 0.1):
+
+```python
+auto e = LagrangeElementTriangle(3);
+double value = e.evaluate(2, {0.3, 0.1})
+```
+
+## Conventions
+### Reference cell
+The reference cell used by simplefem++ is the triangle with vertices at (-1, 0), (1, 0),
+and (0, 1).
+
+### Point ordering
+The basis functions in simplefem++ are all defined using point evaluations. These points
+are ordered lexicographically: for example, the points that define an element with ten points
+are arranged like this:
+
+```
+      9
+     / \
+    7   8
+   /     \
+  4   5   6
+ /         \
+0---1---2---3
+```
+
+
+## Contributing
+As simplefem++ is a small example library, it aims to only contain the features that
+are necessary for the DefElement documentation. We are therefore unlikely to accept
+any pull request that adds features to simplefem++. If you feel like a feature is
+needed, please open an issue and we can discuss it before you work on it.
