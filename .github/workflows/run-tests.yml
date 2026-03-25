@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-tests:
+    name: Style checks and tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.14"
+      - uses: actions/checkout@v4
+
+      - run: |
+          cmake -DCMAKE_INSTALL_PREFIX:PATH=. ..
+          make
+          make install
+        name: Install simplefem++
+
+      - run: |
+          export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:$(pwd)"
+          python test/run_tests.py
+        name: Run unit tests
