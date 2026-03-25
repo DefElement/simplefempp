@@ -26,6 +26,6 @@ jobs:
         name: Install simplefem++
 
       - run: |
-          export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:$(pwd)"
+          export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:$(pwd)/lib"
           python test/run_tests.py
         name: Run unit tests
