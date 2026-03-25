@@ -30,4 +30,18 @@ int main() {
     assert_value(e2, 4, {0.2, 0.3}, 0.24);
     assert_value(e2, 5, {0.2, 0.3}, -0.12);
     std::cout << std::endl;
+
+    std::cout << "Degree 3" << std::endl;
+    auto e3 = LagrangeElementTriangle(3);
+    assert_value(e3, 0, {0.2, 0.3}, -0.0625);
+    assert_value(e3, 1, {0.2, 0.3}, 0.225);
+    assert_value(e3, 2, {0.2, 0.3}, -0.18);
+    assert_value(e3, 3, {0.2, 0.3}, 0.056);
+    assert_value(e3, 4, {0.2, 0.3}, 0.3375);
+    assert_value(e3, 5, {0.2, 0.3}, 0.81);
+    assert_value(e3, 6, {0.2, 0.3}, -0.108);
+    assert_value(e3, 7, {0.2, 0.3}, -0.0675);
+    assert_value(e3, 8, {0.2, 0.3}, -0.027);
+    assert_value(e3, 9, {0.2, 0.3}, 0.0165);
+    std::cout << std::endl;
 }
