@@ -20,12 +20,14 @@ jobs:
       - uses: actions/checkout@v4
 
       - run: |
-          cmake -DCMAKE_INSTALL_PREFIX:PATH=. .
+          mkdir build
+          cd build
+          cmake -DCMAKE_INSTALL_PREFIX:PATH=. ..
           make
           make install
         name: Install simplefem++
 
       - run: |
-          export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:$(pwd)/lib"
+          export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:$(pwd)/build/lib/cmake"
           python test/run_tests.py
         name: Run unit tests
