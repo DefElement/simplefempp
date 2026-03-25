@@ -10,14 +10,14 @@ namespace simplefem {
 class LagrangeElementTriangle {
 
 public:
-    /// Create an element of the given degree
-    LagrangeElementTriangle(int degree);
+  /// Create an element of the given degree
+  LagrangeElementTriangle(int degree);
 
-    /// Evaluate a basis function at a single point
-    double evaluate(int basis_function_index, std::vector<double> point);
+  /// Evaluate a basis function at a single point
+  double evaluate(int basis_function_index, std::vector<double> point);
 
 private:
-    int _degree;
+  int _degree;
 };
 
 } // namespace simplefem
