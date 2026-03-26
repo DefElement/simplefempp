@@ -7,7 +7,7 @@ in the DefElement documentation.
 
 ## Using simplefem++
 
-simplefem++ can be used to evaluate basis functions of Lagrange elements on triangles. To
+simplefem++ can be used to evaluate basis functions of degree 1 to 3 Lagrange elements on triangles. To
 create a Lagrange element on a triangle, the class `LagrangeElementTriangle` can
 be initialised. For example, the following snippet creates a degree 3 Lagrange element on a
 triangle:
@@ -27,22 +27,22 @@ double value = e.evaluate(2, {0.3, 0.1})
 
 ## Conventions
 ### Reference cell
-The reference cell used by simplefem++ is the triangle with vertices at (-1, 0), (1, 0),
+The reference cell used by simplefem++ is the triangle with vertices at (0, 0), (1, 0),
 and (0, 1).
 
 ### Point ordering
 The basis functions in simplefem++ are all defined using point evaluations. These points
-are ordered lexicographically: for example, the points that define an element with ten points
+are ordered lexicographically: for example, the points that define a degree 3 element
 are arranged like this:
 
 ```
-      9
-     / \
-    7   8
-   /     \
-  4   5   6
- /         \
-0---1---2---3
+9
+|\
+7 8
+|  \
+4 5 6
+|    \
+0-1-2-3
 ```
 
 
