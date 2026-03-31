@@ -94,3 +94,8 @@ double LagrangeElementTriangle::evaluate(int basis_function_index,
 
   return 0.0;
 }
+
+std::size_t LagrangeElementTriangle::dim() {
+  return (_degree + 1) * (_degree + 2) / 2;
+}
+
